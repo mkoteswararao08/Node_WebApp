@@ -1,0 +1,32 @@
+
+    <% include ./partials/header %>
+
+    <% include ./partials/navbar %>
+    <!-- <ul>
+         <% users.forEach( function(user){  %>
+             
+            <li><%= user.name  %></li>
+         <% }); %>
+    </ul> -->
+
+    <div class="container">
+        <table class="table table-striped">
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>AGE</th>
+                    <th>DELETE</th>
+                    <th>Update</th>
+                </tr>
+                <%  users.forEach( function(user){  %>   
+                    <tr>
+                        <td><%= user.id %></td>
+                        <td><%= user.name %></td>
+                        <td><%= user.age %></td>
+                        <td><a href="/Delete/<%=user.id%>"><button class="btn btn-primary">Delete</button></a></td> 
+                        <td><a href="/updatepage?id=<%=user.id%>"><button class="btn btn-success">Update</button></a></td>
+                    </tr> 
+                <% }); %>
+        </table>
+    </div> 
+    <% include ./partials/footer %>
